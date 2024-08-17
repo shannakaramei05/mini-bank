@@ -1,26 +1,24 @@
 package com.example.coresystem.model;
 
 import com.example.coresystem.model.base.BaseEntity;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.UniqueElements;
 
 import java.math.BigInteger;
+import java.util.List;
 
 @Entity
 @Table(name = "ACCOUNTS")
 public class Accounts extends BaseEntity {
 
-    @Id
-    @Column(name = "id")
-    private int id;
 
+    @UniqueElements
     @Column(name = "ACCOUNT_NO")
     @Length(max = 25)
     private String acctNo;
 
+    @UniqueElements
     @Column(name = "CARD_NO")
     @Length(max = 25)
     private String cardNo;
@@ -52,4 +50,10 @@ public class Accounts extends BaseEntity {
     @Length(max = 8)
     private String createDt;
 
+    @ManyToOne
+    @JoinColumn(name="USER_ID")
+    private Users user;
+
+    @OneToMany(mappedBy = "account")
+    List<Transactions> transactions;
 }

@@ -1,10 +1,7 @@
 package com.example.coresystem.model;
 
 import com.example.coresystem.model.base.BaseEntity;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
@@ -14,10 +11,6 @@ import org.hibernate.validator.constraints.Length;
 @Getter
 @Setter
 public class UserActivities extends BaseEntity {
-
-    @Id
-    @Column(name = "ID")
-    private int id;
 
 
     @Column(name = "LOGIN_PASSWORD")
@@ -71,4 +64,8 @@ public class UserActivities extends BaseEntity {
     @Column(name = "LOGIN_STATUS")
     @Length(max=2)
     private String loginSts;
+
+    @OneToOne
+    @JoinColumn(name = "USER_ID")
+    private Users user;
 }

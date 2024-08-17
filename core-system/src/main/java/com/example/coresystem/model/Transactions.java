@@ -1,10 +1,7 @@
 package com.example.coresystem.model;
 
 import com.example.coresystem.model.base.BaseEntity;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
@@ -15,11 +12,7 @@ import java.math.BigInteger;
 @Table(name = "TRANSACTIONS")
 @Getter
 @Setter
-public class Transcations extends BaseEntity {
-
-    @Id
-    @Column(name = "ID")
-    private int id;
+public class Transactions extends BaseEntity {
 
     @Column(name = "REFF_NO")
     @Length(max = 12)
@@ -86,4 +79,10 @@ public class Transcations extends BaseEntity {
     @Length(max = 10)
     private String status;
 
+    @ManyToOne
+    @JoinColumn(name = "ACCOUNT_NO")
+    private Accounts account;
+
+    @OneToOne(mappedBy = "transactions")
+    private TransactionHistories transactionHistories;
 }

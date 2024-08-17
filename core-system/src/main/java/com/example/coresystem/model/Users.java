@@ -1,14 +1,14 @@
 package com.example.coresystem.model;
 
 import com.example.coresystem.model.base.BaseEntity;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.UniqueElements;
+
+import java.util.List;
 
 @Entity
 @Table(name = "USERS")
@@ -16,10 +16,7 @@ import org.hibernate.validator.constraints.Length;
 @Setter
 public class Users extends BaseEntity {
 
-    @Id
-    @Column(name = "id")
-    private int id;
-
+    @UniqueElements
     @Column(name = "USER_ID")
     @Length(max = 25)
     private String userId;
@@ -61,5 +58,12 @@ public class Users extends BaseEntity {
     @Length(max = 8)
     private  String usrRegDt;
 
+
+    @OneToOne(mappedBy = "user")
+    private UserActivities userActivities;
+
+
+    @OneToMany(mappedBy ="user" )
+    private List<Accounts> accounts;
 
 }
