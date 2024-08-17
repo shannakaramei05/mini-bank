@@ -12,17 +12,6 @@ import org.hibernate.validator.constraints.Length;
 @Setter
 public class UserActivities extends BaseEntity {
 
-
-    @Column(name = "LOGIN_PASSWORD")
-    @Length(max = 100)
-    private String password;
-
-
-    @Column(name = "DEBIT_PIN_NO")
-    @Length(max=6)
-    private String debitPinNo;
-
-
     @Column(name = "PASSWD_ERR_TCNT")
     @Length(max = 2)
     private int psswdErrCnt;

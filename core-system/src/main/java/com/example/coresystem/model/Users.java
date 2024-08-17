@@ -21,6 +21,15 @@ public class Users extends BaseEntity {
     @Length(max = 25)
     private String userId;
 
+    @Column(name = "LOGIN_PASSWORD")
+    @Length(max = 100)
+    private String password;
+
+
+    @Column(name = "DEBIT_PIN_NO")
+    @Length(max=6)
+    private String debitPinNo;
+
     @Column(name = "USER_NM")
     @Length(max = 50)
     private String usrNm;
