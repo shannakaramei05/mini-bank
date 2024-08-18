@@ -1,27 +1,29 @@
 package com.example.coresystem.controller;
 
-import com.example.coresystem.model.Users;
-import com.example.coresystem.repository.UserRepository;
+import com.example.coresystem.dto.UserRegisterRequest;
+import com.example.coresystem.dto.UserRegisterResponse;
+import com.example.coresystem.services.UserServices;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
 
 @RestController
 @RequestMapping("/v1/users")
 public class UserController {
 
-    private final UserRepository userRepository;
+    private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
     @Autowired
-    public UserController(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
+    private UserServices userServices;
 
-    @GetMapping("/")
-    public List<Users> getUser() {
-        return userRepository.findAll();
+    @PostMapping("/registers")
+    public UserRegisterResponse createUser(@RequestBody UserRegisterRequest request) {
+        logger.info("{}" , request);
+        return userServices.createUser(request);
     }
 }

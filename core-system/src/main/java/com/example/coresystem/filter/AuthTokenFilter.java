@@ -38,6 +38,12 @@ public class AuthTokenFilter extends OncePerRequestFilter {
         logger.debug("AuthTokenFilter called for URI: {}", request.getRequestURI());
 
         try {
+
+            if ("/v1/users/registers".equals(request.getRequestURI())) {
+                filterChain.doFilter(request, response);
+                return;
+            }
+
             String jwt = parseJwt(request);
 
             if (jwt != null && jwtUtils.validateJwtToken(jwt)) {

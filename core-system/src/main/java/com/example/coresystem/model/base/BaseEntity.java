@@ -27,12 +27,10 @@ public abstract class BaseEntity implements Serializable {
 
     @CreationTimestamp
     @Column(name = "SYS_REG_DTM")
-    @Length(max = 100)
     private LocalDateTime sysRegDtm;
 
     @UpdateTimestamp
     @Column(name = "SYS_UPD_DTM")
-    @Length(max = 100)
     private LocalDateTime sysUpdDtm;
 
     @Column(name = "USR_REG_ID")

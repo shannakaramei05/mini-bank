@@ -1,0 +1,11 @@
+
+POST localhost:8080/v1/users/registers
+Content-Type: application/json
+
+
+{
+  "usrNm" : "NerdJhon",
+  "userId": "nerd012456",
+  "password" : "password",
+  "email": "nerdJohn@gmail.com"
+}

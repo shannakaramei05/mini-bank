@@ -2,6 +2,8 @@ package com.example.coresystem.model;
 
 import com.example.coresystem.model.base.BaseEntity;
 import jakarta.persistence.*;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.UniqueElements;
 
@@ -13,7 +15,6 @@ import java.util.List;
 public class Accounts extends BaseEntity {
 
 
-    @UniqueElements
     @Column(name = "ACCOUNT_NO")
     @Length(max = 25)
     private String acctNo;
