@@ -18,6 +18,7 @@ import java.util.List;
 @Setter
 public class Users extends BaseEntity {
 
+    @Id
     @Column(name = "USER_ID")
     @Length(max = 25)
     private String userId;

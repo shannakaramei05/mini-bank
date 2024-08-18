@@ -1,7 +1,6 @@
 package com.example.coresystem.controller;
 
-import com.example.coresystem.dto.UserRegisterRequest;
-import com.example.coresystem.dto.UserRegisterResponse;
+import com.example.coresystem.dto.*;
 import com.example.coresystem.services.UserServices;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,7 +22,18 @@ public class UserController {
 
     @PostMapping("/registers")
     public UserRegisterResponse createUser(@RequestBody UserRegisterRequest request) {
-        logger.info("{}" , request);
         return userServices.createUser(request);
+    }
+
+
+    @PostMapping("/login")
+    public LoginResponse doLogin(@RequestBody LoginRequest loginRequest) {
+        return null;
+    }
+
+
+    @PostMapping("/request/card")
+    public RequestCardResponse requestCard(@RequestBody RequestCard requestCard) {
+        return null;
     }
 }

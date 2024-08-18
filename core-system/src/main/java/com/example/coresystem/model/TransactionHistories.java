@@ -14,6 +14,11 @@ import java.math.BigInteger;
 @Setter
 public class TransactionHistories extends BaseEntity {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID")
+    private long id;
+
     @Column(name = "TRSC_DT")
     @Length(max = 8)
     private String trscDt;

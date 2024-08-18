@@ -33,7 +33,7 @@ public class SecurityConfig {
         http.csrf(AbstractHttpConfigurer::disable);
         http.authorizeHttpRequests(request->
                 request.requestMatchers("/v1/users/registers").permitAll()
-                        .requestMatchers("/*").permitAll()
+                        .requestMatchers("/v1/users/login").permitAll()
                         .anyRequest().authenticated()
                 );
         http.sessionManagement(session->session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));

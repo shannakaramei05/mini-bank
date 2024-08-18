@@ -14,12 +14,11 @@ import java.util.List;
 @Table(name = "ACCOUNTS")
 public class Accounts extends BaseEntity {
 
-
+    @Id
     @Column(name = "ACCOUNT_NO")
     @Length(max = 25)
     private String acctNo;
 
-    @UniqueElements
     @Column(name = "CARD_NO")
     @Length(max = 25)
     private String cardNo;

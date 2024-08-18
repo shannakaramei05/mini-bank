@@ -8,6 +8,7 @@ import com.example.coresystem.repository.UserRepository;
 import com.example.coresystem.services.UserActivityServices;
 import com.example.coresystem.services.UserServices;
 
+import com.example.coresystem.utils.CommonUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -44,10 +45,11 @@ public class UserServicesImpl implements UserServices {
         newUser.setPassword(passwordEncoder.encode(request.getPassword()));
         newUser.setAdmin(Boolean.FALSE);
         newUser.setEmail(request.getEmail());
+        newUser.setUsrRegDt(CommonUtils.currDate());
         newUser.setSysRegDtm(LocalDateTime.now());
         newUser.setSysUpdDtm(LocalDateTime.now());
         newUser.setUsrRegId("00000000");
-        newUser.setUsrRegId("00000000");
+        newUser.setUsrUpdId("00000000");
 
         userRepository.save(newUser);
         userActivityServices.createUserBase(newUser);

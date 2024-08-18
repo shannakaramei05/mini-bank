@@ -14,6 +14,11 @@ import org.hibernate.validator.constraints.Length;
 @Setter
 public class UserActivities extends BaseEntity {
 
+    @Id
+    @Column(name = "ID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     @Column(name = "PASSWD_ERR_TCNT")
     private int psswdErrCnt;
 

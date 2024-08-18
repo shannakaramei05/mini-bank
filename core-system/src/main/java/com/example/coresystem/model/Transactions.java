@@ -14,6 +14,7 @@ import java.math.BigInteger;
 @Setter
 public class Transactions extends BaseEntity {
 
+    @Id
     @Column(name = "REFF_NO")
     @Length(max = 12)
     private String reffNo;

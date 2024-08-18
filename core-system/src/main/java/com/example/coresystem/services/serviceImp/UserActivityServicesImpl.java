@@ -28,7 +28,7 @@ public class UserActivityServicesImpl implements UserActivityServices {
         userJourney.setSysRegDtm(LocalDateTime.now());
         userJourney.setSysUpdDtm(LocalDateTime.now());
         userJourney.setUsrRegId("00000000");
-        userJourney.setUsrRegId("00000000");
+        userJourney.setUsrUpdId("00000000");
 
         userActivityRepository.save(userJourney);
 
