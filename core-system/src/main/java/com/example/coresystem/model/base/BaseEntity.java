@@ -19,20 +19,12 @@ import java.util.UUID;
 @MappedSuperclass
 public abstract class BaseEntity implements Serializable {
 
-
-    @Id
-    @GeneratedValue
-    @Column(columnDefinition = "BINARY(16)", updatable = false, nullable = false)
-    private UUID id;
-
     @CreationTimestamp
     @Column(name = "SYS_REG_DTM")
-    @Length(max = 100)
     private LocalDateTime sysRegDtm;
 
     @UpdateTimestamp
     @Column(name = "SYS_UPD_DTM")
-    @Length(max = 100)
     private LocalDateTime sysUpdDtm;
 
     @Column(name = "USR_REG_ID")

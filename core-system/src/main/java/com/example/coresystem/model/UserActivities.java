@@ -3,6 +3,8 @@ package com.example.coresystem.model;
 import com.example.coresystem.model.base.BaseEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
 
@@ -12,29 +14,18 @@ import org.hibernate.validator.constraints.Length;
 @Setter
 public class UserActivities extends BaseEntity {
 
-
-    @Column(name = "LOGIN_PASSWORD")
-    @Length(max = 100)
-    private String password;
-
-
-    @Column(name = "DEBIT_PIN_NO")
-    @Length(max=6)
-    private String debitPinNo;
-
+    @Id
+    @Column(name = "ID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Column(name = "PASSWD_ERR_TCNT")
-    @Length(max = 2)
     private int psswdErrCnt;
 
-
     @Column(name = "DEBIT_ERR_TCNT")
-    @Length(max = 2)
     private int debitErrCnt;
 
-
     @Column(name = "LGN_ERR_TCNT")
-    @Length(max = 2)
     private int lgnErrCnt;
 
     @Column(name = "PREV_PASSWORD")
@@ -54,7 +45,6 @@ public class UserActivities extends BaseEntity {
     private String lstAcctUse;
 
     @Column(name = "IS_CHG_PASSWD")
-    @Length(max = 1)
     private boolean isChgPw;
 
     @Column(name = "CHANGE_PASSWD_DT")

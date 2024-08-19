@@ -9,4 +9,8 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: create-drop #dev only
+
+  app:
+    jwtSecret: "5f0JbGq+K9gR5I4j0s3h8Lf4N5E8D1pklq2PRQz2b5E="
+    jwtExpirationMs: 36000

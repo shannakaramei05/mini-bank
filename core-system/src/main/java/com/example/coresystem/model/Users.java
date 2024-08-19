@@ -4,6 +4,8 @@ import com.example.coresystem.model.base.BaseEntity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.UniqueElements;
@@ -16,10 +18,19 @@ import java.util.List;
 @Setter
 public class Users extends BaseEntity {
 
-    @UniqueElements
+    @Id
     @Column(name = "USER_ID")
     @Length(max = 25)
     private String userId;
+
+    @Column(name = "LOGIN_PASSWORD")
+    @Length(max = 100)
+    private String password;
+
+
+    @Column(name = "DEBIT_PIN_NO")
+    @Length(max=6)
+    private String debitPinNo;
 
     @Column(name = "USER_NM")
     @Length(max = 50)
@@ -51,7 +62,6 @@ public class Users extends BaseEntity {
     private String country;
 
     @Column(name = "IS_ADMIN")
-    @Length(max = 1)
     private boolean isAdmin;
 
     @Column(name = "USR_REGIST_DT")
