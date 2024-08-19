@@ -12,5 +12,5 @@ spring:
       ddl-auto: create-drop #dev only
 
   app:
-    jwtSecret: "test123456###"
+    jwtSecret: "5f0JbGq+K9gR5I4j0s3h8Lf4N5E8D1pklq2PRQz2b5E="
     jwtExpirationMs: 36000

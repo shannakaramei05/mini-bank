@@ -21,7 +21,7 @@ public class UserInfoServices implements UserDetailsService {
     }
 
     @Override
-    public UserDetails loadUserByUsername(String userId) throws UsernameNotFoundException {
+    public CustomUserDetails loadUserByUsername(String userId) throws UsernameNotFoundException {
 
         Optional<Users> user = userRepository.findByUserId(userId);
         if(!user.isPresent()) {
@@ -31,6 +31,7 @@ public class UserInfoServices implements UserDetailsService {
         userInfo.setUserId(user.get().getUserId());
         userInfo.setPassword(user.get().getPassword());
         userInfo.setUserSts(user.get().getStatus());
+        userInfo.setUsrNm(user.get().getUsrNm());
 
         return new CustomUserDetails(userInfo);
     }

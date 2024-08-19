@@ -44,6 +44,11 @@ public class AuthTokenFilter extends OncePerRequestFilter {
                 return;
             }
 
+            if ("/v1/users/login".equals(request.getRequestURI())) {
+                filterChain.doFilter(request, response);
+                return;
+            }
+
             String jwt = parseJwt(request);
 
             if (jwt != null && jwtUtils.validateJwtToken(jwt)) {
