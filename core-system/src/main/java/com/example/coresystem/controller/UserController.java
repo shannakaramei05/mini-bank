@@ -58,8 +58,11 @@ public class UserController {
         return loginResponse;
     }
 
-    @PostMapping("/request/card")
+    @PostMapping("/card-request")
     public RequestCardResponse requestCard(@RequestBody RequestCard requestCard) {
+        //update userTable
+        //update userActivity
+        //insert Accounts Table
         return null;
     }
 
