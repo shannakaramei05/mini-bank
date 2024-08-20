@@ -9,5 +9,6 @@ public class RequestCard {
     private String address;
     private String country;
     private String phoneNo;
+    private String currency;
 
 }

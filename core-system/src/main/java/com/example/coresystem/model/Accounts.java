@@ -2,8 +2,10 @@ package com.example.coresystem.model;
 
 import com.example.coresystem.model.base.BaseEntity;
 import jakarta.persistence.*;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.UniqueElements;
 
@@ -12,6 +14,8 @@ import java.util.List;
 
 @Entity
 @Table(name = "ACCOUNTS")
+@Getter
+@Setter
 public class Accounts extends BaseEntity {
 
     @Id

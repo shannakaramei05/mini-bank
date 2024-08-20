@@ -13,5 +13,6 @@ public class Constant {
     public static String USR_INACTIVE_CD = "03";
     public static String USR_BLOCK_CD = "99";
     public static String ACCT_BLOCK_CD = "99";
+    public static String ACCT_INACTIVE_CD = "00";
 
 }

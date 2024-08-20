@@ -20,3 +20,17 @@ Content-Type: application/json
   "userId" : "nerd012456",
   "password" : "password"
 }
+
+###
+
+POST localhost:8080/v1/users/card-request
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuZXJkMDEyNDU2IiwidXNyTm0iOiJOZXJkSmhvbiIsImlhdCI6MTcyNDE2NzEzOSwiZXhwIjoxNzI0MTY3MTc1fQ.T2JmXXsQSnok9j6hTQd4X7IdoTD3Tpm8Ef0OHcjrvFY
+
+{
+  "userId": "nerd012456",
+  "address": "Jln. Batu Sindor",
+  "country":  "ID",
+  "phoneNo": "089509794225",
+  "currency": "IDR"
+}

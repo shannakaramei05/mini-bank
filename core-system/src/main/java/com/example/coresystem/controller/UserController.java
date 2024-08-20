@@ -6,6 +6,7 @@ import com.example.coresystem.security.CustomUserDetails;
 import com.example.coresystem.security.JwtUtils;
 import com.example.coresystem.security.UserInfo;
 import com.example.coresystem.security.UserInfoServices;
+import com.example.coresystem.services.AccountServices;
 import com.example.coresystem.services.UserServices;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,6 +28,9 @@ public class UserController {
 
     @Autowired
     private UserServices userServices;
+
+    @Autowired
+    private AccountServices accountServices;
 
     @Autowired
     private AuthenticationManager authenticationManager;
@@ -60,10 +64,7 @@ public class UserController {
 
     @PostMapping("/card-request")
     public RequestCardResponse requestCard(@RequestBody RequestCard requestCard) {
-        //update userTable
-        //update userActivity
-        //insert Accounts Table
-        return null;
+        return accountServices.requestDebitCard(requestCard);
     }
 
     private void authenticate(String username, String password) {
