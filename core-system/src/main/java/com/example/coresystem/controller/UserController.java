@@ -62,9 +62,15 @@ public class UserController {
         return loginResponse;
     }
 
-    @PostMapping("/card-request")
+    @PostMapping("/cards/request")
     public RequestCardResponse requestCard(@RequestBody RequestCard requestCard) {
         return accountServices.requestDebitCard(requestCard);
+    }
+
+
+    @PostMapping("/cards/activation")
+    public ActivationCardResponse activtionCard(@RequestBody ActivationCardRequest request) {
+        return accountServices.activateCard(request);
     }
 
     private void authenticate(String username, String password) {

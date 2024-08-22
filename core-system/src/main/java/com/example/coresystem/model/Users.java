@@ -29,7 +29,7 @@ public class Users extends BaseEntity {
 
 
     @Column(name = "DEBIT_PIN_NO")
-    @Length(max=6)
+    @Length(max = 100)
     private String debitPinNo;
 
     @Column(name = "USER_NM")
