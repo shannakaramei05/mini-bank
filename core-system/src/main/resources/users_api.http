@@ -4,10 +4,10 @@ Content-Type: application/json
 
 
 {
-  "usrNm" : "NerdJhon",
-  "userId": "nerd012456",
+  "usrNm" : "Jhon Wick",
+  "userId": "wick123456",
   "password" : "password",
-  "email": "nerdJohn@gmail.com"
+  "email": "JhonWick@gmail.com"
 }
 
 
@@ -19,4 +19,32 @@ Content-Type: application/json
 {
   "userId" : "nerd012456",
   "password" : "password"
+}
+
+###
+
+POST localhost:8080/v1/users/cards/request
+Content-Type: application/json
+#Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuZXJkMDEyNDU2IiwidXNyTm0iOiJOZXJkSmhvbiIsImlhdCI6MTcyNDE2NzEzOSwiZXhwIjoxNzI0MTY3MTc1fQ.T2JmXXsQSnok9j6hTQd4X7IdoTD3Tpm8Ef0OHcjrvFY
+
+{
+  "userId": "wick123456",
+  "address": "Jln. Merdeka",
+  "country":  "NA",
+  "phoneNo": "089509794225",
+  "currency": "IDR"
+}
+
+###
+
+POST localhost:8080/v1/users/cards/activation
+Content-Type: application/json
+#Authorization: Bearer
+
+{
+  "userId": "nerd012456",
+  "debitPinNo": "123456",
+  "cardNo": "4620832137181138",
+  "expireDate": "20260822"
+
 }

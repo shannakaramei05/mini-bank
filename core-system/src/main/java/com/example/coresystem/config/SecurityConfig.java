@@ -34,7 +34,7 @@ public class SecurityConfig {
         http.authorizeHttpRequests(request->
                 request.requestMatchers("/v1/users/registers").permitAll()
                         .requestMatchers("/v1/users/login").permitAll()
-                        .anyRequest().authenticated()
+                        .anyRequest().permitAll()
                 );
         http.sessionManagement(session->session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
         http.addFilterBefore(authenticationJwtTokenFilter(),
