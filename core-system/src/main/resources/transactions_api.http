@@ -1,0 +1,24 @@
+
+POST localhost:8080/v1/transactions/top-up
+Content-Type: application/json
+
+{
+  "userID": "nerd012456",
+  "acctNo": "121100585010",
+  "topUpBalance": "250000",
+  "rcvAcct": "121100585010",
+  "reasons":"Invest"
+}
+
+###
+
+POST localhost:8080/v1/transactions/top-up
+Content-Type: application/json
+
+{
+"userID": "nerd012456",
+"acctNo": "121100585010",
+"topUpBalance": "250000",
+"rcvAcct": "121179051263",
+"reasons":"Invest"
+}
