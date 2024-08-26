@@ -1,6 +1,7 @@
 package com.example.coresystem.utils;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.TemporalAmount;
 import java.util.Date;
@@ -37,6 +38,16 @@ public class CommonUtils {
     public static String currDate() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
         return LocalDate.now().format(formatter);
+    }
+    public static String currTime() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HHmm");
+        return LocalDateTime.now().format(formatter);
+    }
+
+    //set as refno
+    public static String yyyyMMddHHmmss() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
+        return LocalDateTime.now().format(formatter);
     }
 
     public static String curDateAddYear(int year) {

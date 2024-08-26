@@ -16,7 +16,7 @@ public class Transactions extends BaseEntity {
 
     @Id
     @Column(name = "REFF_NO")
-    @Length(max = 12)
+    @Length(max = 16)
     private String reffNo;
 
     @Column(name = "TRSC_DT")
@@ -79,6 +79,10 @@ public class Transactions extends BaseEntity {
     @Column(name = "STATUS")
     @Length(max = 10)
     private String status;
+
+    @Column(name = "creditOrDebit")
+    @Length(max = 10)
+    private String creditOrDebit;
 
     @ManyToOne
     @JoinColumn(name = "ACCOUNT_NO")
