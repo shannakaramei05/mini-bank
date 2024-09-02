@@ -45,13 +45,6 @@ public class TransactionServicesImpl implements TransactionServices {
         response.setTrxTime(LocalDateTime.now());
         response.setUsrNm(updateAcct.getUser().getUsrNm());
 
-
-        //create log trx
-//        UserActivities usrActv = userActivityRepository.findByUserUserId(users.getUserId()).orElseThrow().getUserActivities();
-//        usrActv.setLstAcctUse(request.getAcctNo());
-//        usrActv.setSysUpdDtm(LocalDateTime.now());
-//        userActivityRepository.save(usrActv);
-
         return response;
 
     }
